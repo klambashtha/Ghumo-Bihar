@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TOURIST PALACE</title>
+  <style type="text/css">
+    *{
+  margin:0px ;
+  padding:0px ;
+  font-family:sans-serif ;
+}
+body.{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background: whitesmoke;
+  align-items: center;
+}
+.container{
+  display: flex;
+}
+.card{
+  height: 500px;
+  margin: 50px;
+  box-shadow: 5px 5px 20px black;
+  overflow: hidden;
+}
+img{
+  height: 500px;
+  width: 350px;
+  border-radius: 3px;
+
+}
+
+.intro{
+  height: 70px;
+  width: 350px;
+  padding: 6px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom:240px;
+  background: rgb(27, 27, 27,.5);
+  color:white;
+  transition:.5s;
+
+}
+.h1
+{
+  margin:10px;
+  font-size:40px;
+}
+
+.p
+{
+  font-size:20px;
+  margin:20px;
+  visibility:hidden;
+    opacity:0;
+
+}
+.span  
+{  
+   font-weight:bold;
+}
+
+.card:hover
+{
+   cursor: pointer;
+
+}
+.card:hover.intro;{
+  height:220px;
+  bottom:240px;
+  background:black;
+}
+.card:hover p{
+  opacity:1;
+  visibility:visible;
+}
+.card:hover img{
+
+}
+
+</style>
+
+
+</head>
+<body>
+  <h1 align="CENTER" style=color:red;><b><u> MOST POPULAR TOURIST PALACE IN ROHTAS</u> </b></h1>
+<div class="container">
+  <div class="card">
+<img src="tara.jpg" alt="GAYA"><a href=" https://en.wikipedia.org/wiki/Maa_Tara_Chandi_Temple"></a>
+<div class="intro">
+  <a href="https://en.wikipedia.org/wiki/Maa_Tara_Chandi_Temple" style=color:yellow;><h1> TARA CHANDI  </h1></a>
+  
+  <p> The<span> TARA CHANDI TEMPLE </span> </p>
+</div>
+</div>
+  <div class="container">
+  <div class="card">
+<img src="tula.jpg" alt="RAJGIR"> 
+<div class="intro">
+<a href="https://tourism.bihar.gov.in/en/destinations/rohtas/tutla-bhawani-waterfall-rohtas" style=color:yellow;> <h1>TUTLA BHAWANI </h1></a>
+  <p>  The<span> TUTLA BHAWANI TEMPLE</span> </p>
+</div>
+</div>
+<div class="container">
+  <div class="card">
+<img src="ss.jpg" alt="ROHTAS">
+<div class="intro">
+<a href="https://en.wikipedia.org/wiki/Tomb_of_Sher_Shah_Suri" style=color:yellow;>  <h1> SHERSHAH SURI TOMB </h1></a>
+  <p> The<span> SHERSHAH SURI TOMB</span></p>
+</div>
+</div>
+
+</div>
+</body>
+</html>

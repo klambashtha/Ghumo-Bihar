@@ -1,0 +1,157 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="registration1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>REGISTRATION FORM</h2>
+        </div>
+        <form class="form" id="form" action="registration1.jsp" autocomplete="off" onsubmit="return validation()">
+            <div class="form-control">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" placeholder="Enter your first name" name="fname">
+                <br> <span id="fnames"></span>
+            </div>
+            <div class="form-control">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" placeholder="Enter your Last Name" name="lname">
+                <br> <span id="lnamess"></span>
+            </div>
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your Email" name="email" autocomplete="email">
+                <br> <span id="emails"></span>
+            </div>
+            <div class="form-control">
+                <label for="number">Mobile Number</label>
+                <input type="number" id="number" placeholder="Enter your phone number" name="phone">
+                <br> <span id="numbers"></span>
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" name="pass">
+                <br> <span id="passwords"></span>
+            </div>
+            <div class="form-control">
+                <label for="cpassword">Confirm Password</label>
+                <input type="password" id="cpassword" placeholder="Enter your confirm password"  name="cpass" autocomplete="new-password">
+                <br> <span id="cpasswords"></span>
+            </div>
+            <p><h4> <a href="#">Terms & Privacy</a></h4></p>
+            <center>
+                <input type="submit" value="Submit" class="btn">
+            <div class="container signin">
+                <p><h2>Already have an account? </h2></p>
+                </div>
+            </center>
+              </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function validation() {
+            var correct_way = /^[A-Za-z]+$/;
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var email = document.getElementById('email').value;
+            var number = document.getElementById('number').value;
+            var password = document.getElementById('password').value;
+            var cpassword = document.getElementById('cpassword').value;
+
+            // Clear previous error messages
+            document.getElementById('fnames').innerHTML = "";
+            document.getElementById('lnamess').innerHTML = "";
+            document.getElementById('emails').innerHTML = "";
+            document.getElementById('numbers').innerHTML = "";
+            document.getElementById('passwords').innerHTML = "";
+            document.getElementById('cpasswords').innerHTML = "";
+
+            if (fname == "") {
+                document.getElementById('fnames').innerHTML = "Please enter your first name";
+                return false;
+            }
+            if (fname.length < 3) {
+                document.getElementById('fnames').innerHTML = "First name must be at least 3 characters";
+                return false;
+            }
+            if (fname.length > 40) {
+                document.getElementById('fnames').innerHTML = "First name must be under 40 characters";
+                return false;
+            }
+            if (!fname.match(correct_way)) {
+                document.getElementById('fnames').innerHTML = "Only alphabets are allowed";
+                return false;
+            }
+
+            if (lname == "") {
+                document.getElementById('lnamess').innerHTML = "Please enter your last name";
+                return false;
+            }
+            if (lname.length < 2) {
+                document.getElementById('lnamess').innerHTML = "Last name must be at least 2 characters";
+                return false;
+            }
+            if (lname.length > 20) {
+                document.getElementById('lnamess').innerHTML = "Last name must be under 20 characters";
+                return false;
+            }
+            if (!lname.match(correct_way)) {
+                document.getElementById('lnamess').innerHTML = "Only alphabets are allowed";
+                return false;
+            }
+
+            if (email == "") {
+                document.getElementById('emails').innerHTML = "Please enter your email";
+                return false;
+            }
+            if (email.indexOf('@') <= 0) {
+                document.getElementById('emails').innerHTML = "Invalid '@' position";
+                return false;
+            }
+            if (email.charAt(email.length - 4) != '.' && email.charAt(email.length - 3) != '.') {
+                document.getElementById('emails').innerHTML = "Invalid '.' position";
+                return false;
+            }
+
+            if (number == "") {
+                document.getElementById('numbers').innerHTML = "Please enter your phone number";
+                return false;
+            }
+            if (isNaN(number)) {
+                document.getElementById('numbers').innerHTML = "Only numbers are allowed";
+                return false;
+            }
+            if (number.length != 10) {
+                document.getElementById('numbers').innerHTML = "Mobile number must be 10 digits";
+                return false;
+            }
+            if (number.charAt(0) != '9' && number.charAt(0) != '8' && number.charAt(0) != '7' && number.charAt(0) != '6') {
+                document.getElementById('numbers').innerHTML = "Mobile number must start with 9, 8, 7, or 6";
+                return false;
+            }
+
+            if (password == "") {
+                document.getElementById('passwords').innerHTML = "Please enter your password";
+                return false;
+            }
+            if (password.length < 5) {
+                document.getElementById('passwords').innerHTML = "Password must be at least 5 characters";
+                return false;
+            }
+            if (password.length > 25) {
+                document.getElementById('passwords').innerHTML = "Password must be less than 25 characters";
+                return false;
+            }
+            if (password != cpassword) {
+                document.getElementById('passwords').innerHTML = "Passwords do not match";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
